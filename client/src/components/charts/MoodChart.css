@@ -1,0 +1,109 @@
+/* client/src/components/charts/MoodChart.css */
+.mood-chart-container {
+  width: 100%;
+  height: 350px;
+  margin-top: 1rem;
+}
+
+.mood-chart-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f7fafc !important; /* Force light background */
+  border-radius: 8px;
+  border: 2px dashed #e2e8f0 !important; /* Force light border */
+  color: #718096 !important; /* Force light mode text color */
+  text-align: center;
+  padding: 2rem;
+}
+
+.mood-chart-placeholder p {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #718096 !important; /* Force light mode text color */
+  font-weight: 500;
+}
+
+.mood-chart-placeholder small {
+  font-size: 0.875rem;
+  color: #a0aec0 !important; /* Force light mode muted color */
+  opacity: 0.8;
+}
+
+.custom-tooltip {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.tooltip-label {
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.tooltip-value {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Recharts custom styles for dark mode */
+.recharts-default-legend {
+  color: var(--text-primary) !important;
+}
+
+.recharts-legend-item-text {
+  color: var(--text-primary) !important;
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: var(--text-secondary) !important;
+  font-size: 12px;
+}
+
+.recharts-cartesian-grid line {
+  stroke: var(--border-color) !important;
+}
+
+.recharts-cartesian-axis-line {
+  stroke: var(--border-color) !important;
+}
+
+/* Dark mode override for placeholder */
+@media (prefers-color-scheme: dark) {
+  .mood-chart-placeholder {
+    background: rgba(255, 255, 255, 0.1) !important; /* Semi-transparent white */
+    border: 2px dashed rgba(255, 255, 255, 0.3) !important; /* Semi-transparent white border */
+    color: #ffffff !important; /* White text */
+  }
+  
+  .mood-chart-placeholder p {
+    color: #ffffff !important; /* White text */
+  }
+  
+  .mood-chart-placeholder small {
+    color: rgba(255, 255, 255, 0.8) !important; /* Semi-transparent white */
+  }
+}
+
+/* Alternative class-based dark mode */
+.dark-mode .mood-chart-placeholder {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 2px dashed rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .mood-chart-placeholder p {
+  color: #ffffff !important;
+}
+
+.dark-mode .mood-chart-placeholder small {
+  color: rgba(255, 255, 255, 0.8) !important;
+}

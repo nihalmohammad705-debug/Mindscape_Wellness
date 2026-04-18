@@ -1,0 +1,475 @@
+/* Dashboard.css */
+.dashboard {
+  min-height: calc(100vh - 140px);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+}
+
+.dashboard-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Welcome Section */
+.welcome-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.welcome-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.greeting-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.time-display {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+  color: white;
+}
+
+.unique-id-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
+  color: white;
+}
+
+.welcome-message p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+  line-height: 1.6;
+  color: white;
+}
+
+/* Inspiration Section */
+.inspiration-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.inspiration-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.quote-icon {
+  font-size: 3rem;
+  opacity: 0.8;
+}
+
+.inspiration-content h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.daily-quote {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: white;
+  opacity: 0.95;
+}
+
+.inspiration-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.inspiration-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.inspiration-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Wellness Actions */
+.wellness-actions-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+  font-weight: bold;
+}
+
+.wellness-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.wellness-card {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.wellness-card:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.card-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-content h3 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: white;
+  font-weight: bold;
+}
+
+.card-content p {
+  line-height: 1.6;
+  margin: 0;
+  color: white;
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.card-cta {
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+  margin-top: 1rem;
+  opacity: 0.9;
+}
+
+/* Challenge Section */
+.challenge-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.challenge-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.challenge-icon {
+  font-size: 2rem;
+}
+
+.challenge-header h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: white;
+}
+
+.challenge-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: white;
+  opacity: 0.95;
+}
+
+.challenge-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.challenge-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.challenge-btn.completed {
+  background: #4CAF50;
+  color: white;
+}
+
+.challenge-btn.skip {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.challenge-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Mindfulness Section */
+.mindfulness-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.mindfulness-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.mindfulness-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mindfulness-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.mindfulness-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.mindfulness-card p {
+  opacity: 0.95;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: white;
+  flex-grow: 1;
+}
+
+.mindfulness-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.mindfulness-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Light Mode Text Overrides - ONLY for wellness cards */
+@media (prefers-color-scheme: light) {
+  .wellness-card {
+    color: #1a1a1a !important;
+  }
+  
+  .card-content h3 {
+    color: #1a1a1a !important;
+  }
+  
+  .card-content p {
+    color: #1a1a1a !important;
+    opacity: 0.9 !important;
+  }
+  
+  .card-cta {
+    color: #1a1a1a !important;
+    opacity: 0.9 !important;
+  }
+}
+
+/* Alternative: Class-based light mode text changes */
+.light-mode .wellness-card {
+  color: #1a1a1a !important;
+}
+
+.light-mode .card-content h3 {
+  color: #1a1a1a !important;
+}
+
+.light-mode .card-content p {
+  color: #1a1a1a !important;
+  opacity: 0.9 !important;
+}
+
+.light-mode .card-cta {
+  color: #1a1a1a !important;
+  opacity: 0.9 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-sidebar {
+    display: none;
+  }
+  
+  .wellness-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mindfulness-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .greeting-container h1 {
+    font-size: 2rem;
+  }
+  
+  .inspiration-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .challenge-actions {
+    flex-direction: column;
+  }
+  
+  .wellness-card {
+    min-height: 200px;
+    padding: 2rem;
+  }
+  
+  .card-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .card-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .welcome-section,
+  .inspiration-section,
+  .challenge-section,
+  .wellness-card,
+  .mindfulness-card {
+    padding: 1.5rem;
+  }
+  
+  .wellness-grid,
+  .mindfulness-grid {
+    gap: 1rem;
+  }
+}
+
+/* Light Mode Text Overrides - ONLY for wellness cards */
+@media (prefers-color-scheme: light) {
+  .wellness-card {
+    color: #ffffff !important;
+  }
+  
+  .card-content h3 {
+    color: #ffffff !important;
+  }
+  
+  .card-content p {
+    color: #ffffff !important;
+    opacity: 0.95 !important;
+  }
+  
+  .card-cta {
+    color: #ffffff !important;
+    opacity: 0.9 !important;
+  }
+}
+
+/* Alternative: Class-based light mode text changes */
+.light-mode .wellness-card {
+  color: #ffffff !important;
+}
+
+.light-mode .card-content h3 {
+  color: #ffffff !important;
+}
+
+.light-mode .card-content p {
+  color: #ffffff !important;
+  opacity: 0.95 !important;
+}
+
+.light-mode .card-cta {
+  color: #ffffff !important;
+  opacity: 0.9 !important;
+}

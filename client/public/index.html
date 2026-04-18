@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- EXPLICITLY SET OUR FAVICON FIRST -->
+    <link rel="icon" type="image/svg+xml" href="/leaf-icon.svg" />
+    <link rel="shortcut icon" type="image/svg+xml" href="/leaf-icon.svg" />
+    <link rel="apple-touch-icon" href="/leaf-icon.svg" />
+    
+    <!-- Prevent any other favicons -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#48bb78" />
+    <meta name="description" content="Track your mood, monitor your mental health, and find peace with Mindscape Wellness" />
+    <title>Mindscape Wellness - Your Mental Health Companion</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <script>
+      // Nuclear option: Force our favicon and remove any others
+      document.addEventListener('DOMContentLoaded', function() {
+        // Remove all existing favicons
+        const existingIcons = document.querySelectorAll('link[rel*="icon"]');
+        existingIcons.forEach(icon => icon.remove());
+        
+        // Add our leaf icon with cache busting
+        const newIcon = document.createElement('link');
+        newIcon.rel = 'icon';
+        newIcon.type = 'image/svg+xml';
+        newIcon.href = '/leaf-icon.svg?t=' + new Date().getTime();
+        document.head.appendChild(newIcon);
+        
+        // Also add as shortcut
+        const shortcutIcon = document.createElement('link');
+        shortcutIcon.rel = 'shortcut icon';
+        shortcutIcon.type = 'image/svg+xml'; 
+        shortcutIcon.href = '/leaf-icon.svg?t=' + new Date().getTime();
+        document.head.appendChild(shortcutIcon);
+      });
+      
+      // Also run after a delay to catch any dynamically added icons
+      setTimeout(() => {
+        const icons = document.querySelectorAll('link[rel*="icon"]');
+        icons.forEach(icon => {
+          if (icon.href.includes('vite')) {
+            icon.remove();
+          }
+        });
+      }, 1000);
+    </script>
+  </body>
+</html>

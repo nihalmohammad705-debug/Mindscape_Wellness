@@ -1,0 +1,285 @@
+.food-form {
+  background: white !important;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0 !important;
+}
+
+.form-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-header h3 {
+  color: #2d3748 !important;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.form-header p {
+  color: #718096 !important;
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2d3748 !important;
+}
+
+/* Meal Type Selector */
+.meal-type-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem;
+}
+
+.meal-option {
+  cursor: pointer;
+}
+
+.meal-option input {
+  display: none;
+}
+
+.meal-label {
+  display: block;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  color: #2d3748 !important;
+  background: white !important;
+}
+
+.meal-option input:checked + .meal-label {
+  border-color: #667eea;
+  background: #f7fafc !important;
+  font-weight: 600;
+}
+
+.meal-option:hover .meal-label {
+  border-color: #cbd5e0;
+}
+
+/* Form Inputs */
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  background: white !important;
+  color: #2d3748 !important;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input::placeholder {
+  color: #a0aec0 !important;
+}
+
+.quantity-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.unit-display {
+  position: absolute;
+  right: 0.75rem;
+  color: #718096 !important;
+  font-size: 0.9rem;
+  background: #f7fafc !important;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+  background: white !important;
+  color: #2d3748 !important;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-textarea::placeholder {
+  color: #a0aec0 !important;
+}
+
+/* Custom Food Form */
+.custom-food-form {
+  background: #f8fafc !important;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0 !important;
+  margin-bottom: 1.5rem;
+}
+
+.nutrition-inputs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.nutrition-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nutrition-label {
+  font-size: 0.8rem;
+  color: #718096 !important;
+  font-weight: 500;
+}
+
+.nutrition-unit {
+  font-size: 0.8rem;
+  color: #718096 !important;
+  margin-top: 0.25rem;
+}
+
+/* Nutrition Preview */
+.nutrition-preview {
+  background: #f0fff4 !important;
+  border: 1px solid #9ae6b4 !important;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.nutrition-preview h4 {
+  color: #22543d !important;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.preview-item {
+  background: white !important;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.preview-item.calories {
+  border-left: 3px solid #e53e3e !important;
+}
+
+.preview-item.protein {
+  border-left: 3px solid #48bb78 !important;
+}
+
+.preview-item.carbs {
+  border-left: 3px solid #ed8936 !important;
+}
+
+.preview-item.fat {
+  border-left: 3px solid #805ad5 !important;
+}
+
+.preview-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #718096 !important;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.preview-value {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2d3748 !important;
+  margin-bottom: 0.25rem;
+}
+
+.preview-unit {
+  display: block;
+  font-size: 0.8rem;
+  color: #a0aec0 !important;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #667eea !important;
+  color: white !important;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #5a67d8 !important;
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .food-form {
+    padding: 1.5rem;
+  }
+  
+  .meal-type-selector {
+    grid-template-columns: 1fr;
+  }
+  
+  .nutrition-inputs-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .preview-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .preview-item {
+    padding: 0.75rem;
+  }
+  
+  .custom-food-form {
+    padding: 1rem;
+  }
+}

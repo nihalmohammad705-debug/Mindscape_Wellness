@@ -1,0 +1,783 @@
+/* client/src/pages/MoodTracker.css */
+.mood-tracker-page {
+  min-height: calc(100vh - 140px);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.tracker-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+}
+
+.tracker-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header Styles */
+.page-header {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content h1 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.header-content p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.date-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.date-selector label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.date-input {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.date-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+/* Mood Summary - KEEP CARDS LIGHT IN DARK MODE */
+.mood-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.summary-card {
+  background: white !important; /* Force light background */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0 !important; /* Light mode border */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+  min-height: 120px;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+}
+
+.summary-card.mood-score {
+  border-left: 4px solid #667eea !important; /* Light mode color */
+}
+
+.summary-card.entries-count {
+  border-left: 4px solid #48bb78 !important;
+}
+
+.summary-card.mood-level {
+  border-left: 4px solid #ed8936 !important;
+}
+
+.summary-card.weekly-trend {
+  border-left: 4px solid #805ad5 !important;
+}
+
+.summary-icon {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7fafc !important; /* Light mode background */
+  border-radius: 50%;
+  color: #4a5568 !important; /* Light mode text color */
+}
+
+.summary-content {
+  flex: 1;
+}
+
+.summary-content h3 {
+  color: #718096 !important; /* Light mode muted color */
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-value {
+  color: #2d3748 !important; /* Light mode primary color */
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  text-transform: capitalize;
+}
+
+.summary-content p {
+  color: #a0aec0 !important; /* Light mode muted color */
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+/* Recent Entries - KEEP CARDS LIGHT */
+.recent-entries {
+  background: white !important; /* Force light background */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0 !important;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-header h3 {
+  color: #2d3748 !important; /* Light mode primary color */
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.entries-count {
+  background: #f7fafc !important; /* Light mode secondary */
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: #4a5568 !important; /* Light mode secondary color */
+  font-weight: 600;
+}
+
+/* Entry Cards - KEEP LIGHT */
+.entries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.entry-card {
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #f7fafc !important; /* Light mode secondary */
+  transition: box-shadow 0.2s ease;
+}
+
+.entry-card:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.entry-mood {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mood-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+}
+
+.mood-score-display {
+  font-weight: 700;
+  color: #2d3748 !important; /* Light mode primary */
+  font-size: 1rem;
+}
+
+.entry-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.entry-time {
+  font-size: 0.8rem;
+  color: #a0aec0 !important; /* Light mode muted */
+}
+
+.btn-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  font-size: 1rem;
+  color: #718096 !important; /* Light mode secondary */
+}
+
+.btn-delete:hover {
+  background: #fed7d7;
+}
+
+/* Entry Details */
+.entry-details {
+  border-top: 1px solid #e2e8f0 !important;
+  padding-top: 0.75rem;
+}
+
+.mood-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 0.5rem;
+  background: white !important; /* Light background */
+  border-radius: 6px;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #718096 !important; /* Light mode secondary */
+  margin-bottom: 0.25rem;
+  text-transform: capitalize;
+}
+
+.stat-value {
+  display: block;
+  font-weight: 600;
+  color: #2d3748 !important; /* Light mode primary */
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.entry-notes {
+  background: white !important;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border-left: 3px solid #667eea !important; /* Light mode accent */
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #4a5568 !important; /* Light mode secondary */
+}
+
+.entry-suggestion {
+  font-size: 0.8rem;
+  color: #718096 !important; /* Light mode muted */
+  font-style: italic;
+}
+
+/* Delete Confirmation */
+.delete-confirmation {
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.delete-confirmation p {
+  margin: 0 0 0.75rem 0;
+  color: #742a2a;
+  font-size: 0.9rem;
+}
+
+.confirmation-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.confirm-delete-btn {
+  background: #e53e3e;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.confirm-delete-btn:hover {
+  background: #c53030;
+}
+
+.cancel-delete-btn {
+  background: #f7fafc !important;
+  color: #4a5568 !important;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.cancel-delete-btn:hover {
+  background: #e2e8f0 !important;
+}
+
+/* Charts Section - KEEP LIGHT */
+.charts-section {
+  background: white !important;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0 !important;
+}
+
+.chart-placeholder {
+  text-align: center;
+  padding: 3rem;
+  color: #718096 !important;
+  background: #f7fafc !important;
+  border-radius: 8px;
+  border: 2px dashed #e2e8f0 !important;
+}
+
+.chart-placeholder p {
+  color: #718096 !important;
+  margin: 0.5rem 0;
+}
+
+/* Insights Section - KEEP CARDS LIGHT AND 3 COLUMN LAYOUT */
+.insights-section {
+  background: white !important;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0 !important;
+}
+
+.insights-section h3 {
+  color: #2d3748 !important;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.5rem;
+}
+
+.insight-card {
+  background: #f7fafc !important;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea !important;
+  transition: transform 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.insight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.insight-card h4 {
+  color: #2d3748 !important;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.insight-card p {
+  color: #4a5568 !important;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #718096 !important;
+  background: #f7fafc !important;
+  border-radius: 8px;
+}
+
+.empty-state p {
+  margin: 0.5rem 0;
+  color: #718096 !important;
+}
+
+/* Success Message - KEEP LIGHT */
+.success-message {
+  background: white !important;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0 !important;
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.success-message h3 {
+  color: #2d3748 !important;
+  margin-bottom: 0.5rem;
+}
+
+.success-message p {
+  color: #718096 !important;
+  margin: 0;
+}
+
+/* Tracker Content Layout */
+.tracker-content {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 2rem;
+}
+
+.form-section {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.data-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Sidebar */
+.tracker-sidebar {
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .mood-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .insights-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tracker-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .tracker-sidebar {
+    display: none;
+  }
+  
+  .tracker-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-section {
+    position: static;
+  }
+  
+  .page-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .mood-summary {
+    grid-template-columns: 1fr;
+  }
+  
+  .insights-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .entry-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .entry-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .mood-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .confirmation-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .insights-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .tracker-container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .page-header {
+    padding: 1.5rem;
+  }
+  
+  .header-content h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Main Mood Tracker Header - Match Progress Analytics Color */
+.page-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+}
+
+.header-content h1 {
+  color: white !important;
+}
+
+.header-content p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.date-selector label {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.date-input {
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+.date-input:focus {
+  border-color: white !important;
+}
+
+.date-input::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Make header text white for both dark and light modes */
+.page-header .header-content p,
+.page-header .date-selector,
+.page-header .date-selector label,
+.page-header .date-selector span,
+.page-header .date-display,
+.page-header .week-range,
+.page-header *:not(button) {
+  color: white !important;
+}
+
+/* Specifically target any text elements in the header */
+.page-header * {
+  color: white !important;
+}
+
+/* Ensure date input text is white */
+.page-header .date-input {
+  color: white !important;
+}
+
+.page-header .date-input::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Make sure all text in header is visible */
+.page-header {
+  color: white !important;
+}
+
+.page-header h1,
+.page-header h2,
+.page-header h3,
+.page-header h4,
+.page-header h5,
+.page-header h6,
+.page-header p,
+.page-header span,
+.page-header label,
+.page-header div {
+  color: white !important;
+}
+
+/* ===== NUCLEAR OPTION - FORCE TEXT VISIBILITY ===== */
+
+/* Remove all existing colors and force our colors */
+.charts-section *,
+.recent-entries *,
+.insights-section *,
+.summary-card * {
+  color: inherit !important;
+}
+
+/* Force ALL text in charts section to be visible */
+.charts-section,
+.charts-section h1,
+.charts-section h2,
+.charts-section h3,
+.charts-section h4,
+.charts-section h5,
+.charts-section h6,
+.charts-section p,
+.charts-section span,
+.charts-section div,
+.charts-section .section-header,
+.charts-section .section-header h3 {
+  color: #2d3748 !important;
+  font-weight: 600 !important;
+}
+
+/* Force Recharts text to be visible */
+.recharts-wrapper,
+.recharts-surface,
+.recharts-legend-wrapper,
+.recharts-default-legend,
+.recharts-legend-item,
+.recharts-legend-item-text,
+.recharts-cartesian-axis,
+.recharts-cartesian-axis-tick,
+.recharts-cartesian-axis-tick-value,
+.recharts-text,
+.recharts-label,
+.recharts-tooltip-wrapper,
+.recharts-tooltip-item,
+.recharts-tooltip-item-list {
+  color: #2d3748 !important;
+  fill: #2d3748 !important;
+}
+
+/* Specific targeting for Weekly Mood Overview */
+[class*="weekly"],
+[class*="mood"],
+[class*="overview"],
+.section-header,
+.section-title {
+  color: #2d3748 !important;
+}
+
+.section-header h3,
+.section-title h3 {
+  color: #2d3748 !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* ===== DARK MODE NUCLEAR OVERRIDE ===== */
+@media (prefers-color-scheme: dark) {
+  /* Force ALL text in dark mode to be white */
+  .charts-section,
+  .charts-section h1,
+  .charts-section h2,
+  .charts-section h3,
+  .charts-section h4,
+  .charts-section h5,
+  .charts-section h6,
+  .charts-section p,
+  .charts-section span,
+  .charts-section div,
+  .charts-section .section-header,
+  .charts-section .section-header h3 {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Force Recharts text to be white in dark mode */
+  .recharts-wrapper,
+  .recharts-surface,
+  .recharts-legend-wrapper,
+  .recharts-default-legend,
+  .recharts-legend-item,
+  .recharts-legend-item-text,
+  .recharts-cartesian-axis,
+  .recharts-cartesian-axis-tick,
+  .recharts-cartesian-axis-tick-value,
+  .recharts-text,
+  .recharts-label,
+  .recharts-tooltip-wrapper,
+  .recharts-tooltip-item,
+  .recharts-tooltip-item-list {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+  }
+  
+  /* Specific targeting for Weekly Mood Overview in dark mode */
+  [class*="weekly"],
+  [class*="mood"],
+  [class*="overview"],
+  .section-header,
+  .section-title {
+    color: #ffffff !important;
+  }
+  
+  .section-header h3,
+  .section-title h3 {
+    color: #ffffff !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* ===== EMERGENCY JAVASCRIPT STYLE INJECTION ===== */
+/* This will be applied via JavaScript */
+.forced-text-white {
+  color: #ffffff !important;
+}
+
+.forced-text-dark {
+  color: #2d3748 !important;
+}
