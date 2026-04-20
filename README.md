@@ -125,7 +125,7 @@ node server.js
 cd client
 npm install
 npm run dev
-
+```
 
 ## 📖 How to Use
 
@@ -170,6 +170,7 @@ Vigorous	1.5x	Running, Weight Training, HIIT
 
 
 ## 📁 Project Structure
+```text
 Mindscape_Wellness/
 ├── server.js                 # Main Express server
 ├── package.json             # Dependencies
@@ -209,6 +210,7 @@ Mindscape_Wellness/
 ├── database/
 │   └── schema.sql           # Database schema
 └── README.md
+```
 
 ## 🔑 API Endpoints
 Method	Endpoint	Description
