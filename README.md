@@ -128,7 +128,7 @@ npm run dev
 ```
 
 ## 📖 How to Use
-
+```text
 Dashboard Controls
 
 Control	Action
@@ -167,7 +167,7 @@ Intensity	Multiplier	Examples
 Light	0.7x	Walking, Housework, Stretching
 Moderate	1.0x	Brisk walking, Cycling, Yoga
 Vigorous	1.5x	Running, Weight Training, HIIT
-
+```
 
 ## 📁 Project Structure
 ```text
@@ -213,6 +213,7 @@ Mindscape_Wellness/
 ```
 
 ## 🔑 API Endpoints
+```text
 Method	Endpoint	Description
 POST	/api/auth/register	User registration
 POST	/api/auth/login	User login
@@ -224,8 +225,10 @@ GET	/api/nutrition/:userId	Get user nutrition entries
 POST	/api/activity	Add activity log
 GET	/api/activity/:userId	Get user activity logs
 GET	/api/analytics/:userId	Get analytics data
+```
 
 ## Troubleshooting
+```text
 Issue	Solution
 MySQL connection error	Run net start MySQL80 (Windows) or sudo systemctl start mysql (Linux/Mac)
 Port 5000 already in use	Change PORT in server/.env file
@@ -233,6 +236,7 @@ Port 3000 already in use	Change VITE_API_URL or kill process using the port
 JWT token expired	Login again to get new token
 Module not found	Run npm install in both client and server directories
 Database tables missing	Run SOURCE database/schema.sql in MySQL\
+```
 
 📝 License
 This project is submitted in partial fulfillment of the requirements for the Bachelor of Engineering degree in Computer Science and Engineering at Visvesvaraya Technological University, Belagavi.
